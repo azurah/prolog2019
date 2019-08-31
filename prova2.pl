@@ -77,6 +77,10 @@ frase(P1, P2, P3, P4, P5) :-
         palavra(substantivo, P5);
         palavra(substantivo, P5)
     ).
-  % fim letra a
-  % letra b
   
+  % letra b
+  ?- frase(o, bandido, rouba, um, hamburguer).
+  Resposta: false.
+  
+  % letra c
+  ?- 
