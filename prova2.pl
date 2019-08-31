@@ -54,3 +54,29 @@ verbo, a quarta é um pronome e a última é um substantivo.
 (c) Quantas frases diferentes podem ser formadas usando essa regra gramatical e o dicionário
 fornecido?
 */
+% Letra a
+
+frase(P1, P2, P3, P4, P5) :- 
+    (
+        palavra(artigo, P1);
+        palavra(artigo, P1)   
+    ), 
+    (
+        palavra(substantivo, P2);
+        palavra(substantivo, P2)
+    ), 
+    (
+        palavra(verbo, P3);
+        palavra(verbo, P3)
+    ), 
+    (
+        palavra(pronome, P4);
+        palavra(pronome, P4)
+    ), 
+    (
+        palavra(substantivo, P5);
+        palavra(substantivo, P5)
+    ).
+  % fim letra a
+  % letra b
+  
