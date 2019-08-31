@@ -83,4 +83,7 @@ frase(P1, P2, P3, P4, P5) :-
   Resposta: false.
   
   % letra c
-  ?- 
+  ?- X is 2**5.
+  Resposta: 16. 
+  % OBS: Basta observarmos que em cada regra gramatical há 2 alternativas e a frase possuí 5 palavras, donde concluímos 32 possibilidades.
+ 
