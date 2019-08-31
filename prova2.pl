@@ -106,3 +106,24 @@ frase(P1, P2, P3, P4, P5) :-
 
 (e) Defina um predicado avo(X) que é verdade se X é avô de alguém.
 */
+   pai(a, b).
+    pai(a, c). 
+    pai(b, d). 
+    pai(b, e). 
+    pai(c, f).
+
+% letra e
+avo(X, Z) :- pai(Y, Z), pai(X, Y).
+
+% letra c
+neto(X, Z) :- pai(Y, X), pai(Z, Y). 
+
+% letra a
+irmao(X, Z) :- pai(Y, X), pai(Y, Z).
+
+%letra b -- em dúvida
+primo(X, Z) :- pai(P, X), pai(S, Z), irmao(P, S).
+
+%letra d
+descendente(Z, X) :- pai(X, Z); avo(X,Z). 
+
