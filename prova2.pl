@@ -1,5 +1,5 @@
 /**
- Uma forma de interpretar estes fatos é como se fossem três tabelas: a tabela estudante lista os
+Q1. Uma forma de interpretar estes fatos é como se fossem três tabelas: a tabela estudante lista os
 números de matrícula e os nomes de estudantes, a tabela curso lista o código da disciplina e o
 nome da disciplina, a tabela matriculado lista os cursos nos quais os alunos estão matriculados,
 usando os números de matrícula para identicar alunos e códigos de disciplina para identicar
@@ -27,4 +27,30 @@ matriculado(3456, 171).
 matriculado(4567, 069).
 matriculado(5678, 171).
 
+% letra a
 cursa(N, C) :- estudante(X, N), matriculado(X, Y), curso(Y, C).
+% letra b
+cursa(X,truco).
+
+/*
+Q2. Considere o seguinte conjunto de fatos, um pequeno dicionário que define palavras e suas classes
+gramaticais:
+
+    palavra(artigo, um).
+    palavra(artigo, o).
+    palavra(substantivo, bandido).
+    palavra(substantivo, hamburguer).
+    palavra(pronome, algum).
+    palavra(pronome, todo).
+    palavra(verbo, come).
+    palavra(verbo, rouba).
+    
+(a) Escreva uma regra gramatical (frase(P1, P2, P3, P4, P5)) que diz que toda frase de 5
+palavras é válida se a primeira é um artigo, a segunda é um substantivo, a terceira é um
+verbo, a quarta é um pronome e a última é um substantivo.
+
+(b) A frase "o bandido rouba um hamburguer" é válida segunda a regra do item anterior?
+
+(c) Quantas frases diferentes podem ser formadas usando essa regra gramatical e o dicionário
+fornecido?
+*/
