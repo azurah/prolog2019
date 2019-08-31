@@ -127,3 +127,64 @@ primo(X, Z) :- pai(P, X), pai(S, Z), irmao(P, S).
 %letra d
 descendente(Z, X) :- pai(X, Z); avo(X,Z). 
 
+/*
+4) Um mapa de um certo jogo é composto por várias salas numeradas, conectadas por portais.
+Alguns pares de salas estão conectados, outros não. Os portais permitem que o jogador passe
+de uma sala para outra, mas apenas em um sentido, ou seja, o portal que leva da sala 1 para a
+sala 2 não permite que o jogador retorne da sala 2 para a sala 1. Considere a seguinte lista de
+conexões, onde c(X, Y) é verdade se é possível ir de X para Y:
+
+c(1, 2). 
+c(3, 4). 
+c(5, 6).
+c(7, 8). 
+c(9, 10). 
+c(12, 13).
+c(13, 14). 
+c(15, 16). 
+c(17, 18). 
+c(19, 20). 
+c(4, 1). 
+c(6, 3).
+c(4, 7). 
+c(6, 11). 
+c(14, 9). 
+c(11, 15). 
+c(16, 12). 
+c(14, 17). 
+c(16, 19).
+
+(a) Defina um predicado vai(X, Y) que é verdade se existe um caminho, direto ou indireto,
+que leva o jogador da sala X para a sala Y.
+
+(b) Há alguma sala inalcançável a partir das demais? Se sim, quais?
+
+(c) Quais salas deixam o jogador preso?
+
+(d) Qual a sala com menor número a partir da qual é possível chegar na sala 20?
+
+(e) Suponha agora que as conexões são bi-direcionais. O predicado do primeiro item ainda
+funciona? Por que?
+*/
+
+c(1, 2). 
+c(3, 4). 
+c(5, 6).
+c(7, 8). 
+c(9, 10). 
+c(12, 13).
+c(13, 14). 
+c(15, 16). 
+c(17, 18). 
+c(19, 20). 
+c(4, 1). 
+c(6, 3).
+c(4, 7). 
+c(6, 11). 
+c(14, 9). 
+c(11, 15). 
+c(16, 12). 
+c(14, 17). 
+c(16, 19).
+
+% letra a
