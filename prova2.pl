@@ -1,11 +1,3 @@
-/*pai(adao, caim).
-pai(adao, abel).
-pai(adao, seth).
-pai(seth, enos).
-
-avo(X, Y) :- pai(X, Z), pai(Z, Y).*/
-
-
 /**
  Uma forma de interpretar estes fatos é como se fossem três tabelas: a tabela estudante lista os
 números de matrícula e os nomes de estudantes, a tabela curso lista o código da disciplina e o
