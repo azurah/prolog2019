@@ -86,4 +86,23 @@ frase(P1, P2, P3, P4, P5) :-
   ?- X is 2**5.
   Resposta: 16. 
   % OBS: Basta observarmos que em cada regra gramatical há 2 alternativas e a frase possuí 5 palavras, donde concluímos 32 possibilidades.
- 
+
+/*
+3. Considere os seguintes fatos onde pai(X, Y) é verdade se X é pai de Y:
+
+  pai(a, b).
+  pai(a, c). 
+  pai(b, d). 
+  pai(b, e). 
+  pai(c, f).
+  
+(a) Defina um predicado irmao(X, Y) que é verdade se X é irmão de Y.
+
+(b) Defina um predicado primo(X, Y) que é verdade se X é primo de Y.
+
+(c) Defina um predicado neto(X, Y) que é verdade se X é neto de Y.
+
+(d) Defina um predicado descendente(X, Y) que é verdade se X é descendente de Y.
+
+(e) Defina um predicado avo(X) que é verdade se X é avô de alguém.
+*/
