@@ -189,17 +189,31 @@ c(16, 19).
 
 % letra a
 vai(X, Y) :- c(X, Y).
-vai(X, Y) :- c(X, Z), vai(Z, Y).
+vai(X, Y):- c(X, Z), vai(Z, Y).
 
 %letra b
-salas 3 e 5 são inalcançáveis. 
+%salas 5 é inalcançavel uma vez que nenhuma sala leva a ela.
+hasSome(X) :- vai(Z, X), write(Z). 
+whoAnter(Z) :- findall(X, vai(X, Z), L),write(L).
+
 
 %letra c
-As salas 2, 8, 20, 18, 10 deixam o jogador preso. 
+%As salas 2, 8, 20, 18, 10 deixam o jogador preso. 
+semProx(Z) :- findall(X, vai(Z, X), L), write(L).
 
 %letra d
-Sala de número 5.
+%Sala 5.
+%encontrar o minimo de uma lista
+min_list([Min],Min).
 
-%letra e
-sim, 
+min_list([H,K|T],M) :-
+    H =< K,                             
+    min_list([H|T],M).               
+
+min_list([H,K|T],M) :-
+    H > K,                             
+    min_list([K|T],M).  
+
+%Encontrar o valor menor antes 20
+minAnterior20(Z) :-  findall(X, vai(X, Z), L), min_list(L, Y), write(Y).
 
