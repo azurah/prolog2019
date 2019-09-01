@@ -196,3 +196,10 @@ salas 3 e 5 são inalcançáveis.
 
 %letra c
 As salas 2, 8, 20, 18, 10 deixam o jogador preso. 
+
+%letra d
+Sala de número 5.
+
+%letra e
+sim, 
+
