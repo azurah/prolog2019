@@ -193,3 +193,6 @@ vai(X, Y) :- c(X, Z), vai(Z, Y).
 
 %letra b
 salas 3 e 5 são inalcançáveis. 
+
+%letra c
+As salas 2, 8, 20, 18, 10 deixam o jogador preso. 
