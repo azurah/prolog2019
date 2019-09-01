@@ -192,4 +192,4 @@ vai(X, Y) :- c(X, Y).
 vai(X, Y) :- c(X, Z), vai(Z, Y).
 
 %letra b
-
+salas 3 e 5 são inalcançáveis. 
