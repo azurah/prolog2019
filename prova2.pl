@@ -188,3 +188,8 @@ c(14, 17).
 c(16, 19).
 
 % letra a
+vai(X, Y) :- c(X, Y).
+vai(X, Y) :- c(X, Z), vai(Z, Y).
+
+%letra b
+
