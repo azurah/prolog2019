@@ -217,3 +217,46 @@ min_list([H,K|T],M) :-
 %Encontrar o valor menor antes 20
 minAnterior20(Z) :-  findall(X, vai(X, Z), L), min_list(L, Y), write(Y).
 
+/* 
+Q7. Implemente os seguintes métodos para manipulação de matrizes:
+(a) Transposição (existe o predicado transpose no PROLOG, não use)
+(b) Multiplicação
+(c) Inversão (no SIGAA tem a explicação de um método de inversão, caso não lembre). Assuma que as matrizes são listas de listas de números, as listas internas são as linhas. Ex:
+[[1, 2], [3, 4], [5, 6]] é uma matriz com 3 linhas e 2 colunas, onde a primeira linha tem elementos 1 e 2, a segunda tem elementos 3 e 4 e a terceira tem elementos 5 e 6. Nomes a usar os predicados: trans(A, Y), mult(A, B, Y) e inv(A, Y). Em todos os casos Y deve ser unificado com a resposta desejada
+*/
+%(a) Transposta de uma matriz
+transpose_Mine([[]|_], []).
+transpose_Mine(Matrix, [Row|Rows]) :- 
+transpose_1(Matrix, Row, RestMatrix), transpose_Mine(RestMatrix, Rows).
+transpose_1([], [], []).
+transpose_1([[H|T]|Rows], [H|Hs], [T|Ts]) :-
+ transpose_1(Rows, Hs, Ts).
+
+/*(consulta teste)
+ ?- transpose_Mine([[1, 2, 3], [4, 5, 6], [7, 8, 9]], R), print(R).*/
+
+
+%(b) Multiplicação entre duas matrizes. N é o produto escalar das listas V1 and V2.
+dot(V1, V2, N)  :-  maplist(product, V1, V2, P), sumlist(P, N).
+product(N1, N2, N3) :- N3 is N1*N2.
+ % M3 é o produto de M1 and M2
+mmult(M1, M2, M3)  :-  transpose_Mine(M2,MT), maplist(mm_helper(MT), M1, M3).
+mm_helper(M2, I1, M3) :- maplist(dot(I1), M2, M3).
+%(c) Matriz Inversa
+% rev(+M, -M2) – lista inversa
+rev(M, M2) :- halves(M, [], M2).
+% halves(+A, +B, -C).
+halves([X|T], Acc, M2) :- halves(T, [X| Acc], M2).
+halves([], X, X).
+
+/* 
+Q5. Quando é aplicado o método da resolução a uma fórmula lógica, tanto proposicional quanto
+de predicados, e chegamos em uma cláusula vazia, sabemos que a fórmula é insatisfazível. No
+entanto, na programação lógica (que é baseada no método da resolução) dizemos que a consulta
+é consequência lógica do programa quando encontramos a cláusula vazia. Em um caso a cláusula vazia representa contradição e no outro representa tautologia. Mostre que não há incoerência entre as duas interpretações.
+
+Reposta:
+Em programação logica, fatos conhecidos são utilizados como base para que possamos responder a perguntas sobre outros fatos, desconhecidos. Acaso nosso algoritmo nos retorne uma lista vazia a pergunta feita, isto indicaria que não existe uma solução válida nas informações presentes, desta forma, a consulta realizada é falsa. Todavia, se fizermos uma consulta e o algoritmo nos retorne uma lista vazia, entendemos que a consulta realizada é verdadeira. Então, pode ser que obtenhamos uma contradição ou uma tautologia, a depender do algoritmo proposto (uma falha? Não!). Na lógica de predicados, pela própria definição, encontramos sempre para uma solução vazia que a formula é insatisfazível. Portanto, entendemos que em programação logica, encontrar uma contradição ou uma tautologia, depende da forma como interpretamos o resultado e verificamos a coerência entre o resultado e a pergunta realizada.
+*/
+
+
